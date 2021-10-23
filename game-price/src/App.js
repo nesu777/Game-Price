@@ -2,7 +2,8 @@ import './App.css';
 import React, { Component } from 'react'
 import GameInfo from './GameInfo'
 
-// let baseUrl = 'http://localhost:3003'
+// let baseUrl = 'http://localhost:3000'
+let names
 
 class App extends Component {
   constructor(props) {
@@ -13,12 +14,28 @@ class App extends Component {
       apiKey: `apikey=${process.env.REACT_APP_API_KEY}`,
       query: '&t=',
       gameTitle: '',
-      searchURL: ''
+      searchURL: '',
+      gamesOnSale: []
     }
 
       // this.handleChange = this.handleChange.bind(this)
       // this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  getGames = () =>{
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+    fetch("https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15", requestOptions)
+  .then(response => response.text())
+  .then(result => this.setState({
+    gamesOnSale: result
+  }))
+  .then(console.log(this.state.gamesOnSale.map(function(item){return item})))
+  .catch(error => console.log('error', error));
+  }
+
 
   handleChange = (event) => {
     //console.log(event.target.id)
@@ -48,8 +65,12 @@ class App extends Component {
     })
   }
 
+  componentDidMount(){
+    this.getGames()
+  }
+
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <>
         <form onSubmit={this.handleSubmit}>
