@@ -1,7 +1,8 @@
 import './App.css';
 import React, { Component } from 'react'
+import GameInfo from './GameInfo'
 
-let baseUrl = 'http://localhost:3003'
+// let baseUrl = 'http://localhost:3003'
 
 class App extends Component {
   constructor(props) {
