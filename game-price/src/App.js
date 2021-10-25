@@ -20,7 +20,8 @@ class App extends Component {
       gameTitle: '',
       searchURL: '',
       gamesOnSale: [],
-      requestOptions: {}
+      requestOptions: {},
+      searchResults: []
     }
 
       // this.handleChange = this.handleChange.bind(this)
@@ -62,19 +63,20 @@ class App extends Component {
 
   //Revise to pull game url from cheapshark
   handleSubmit = (event) => {
-    event.preventDefault()
     this.setState({
-      searchURL: this.state.baseURL + this.state.apiKey +
-      this.state.query + this.state.gameTitle
+      requestOptions: {
+        method: 'GET',
+        redirect: 'follow'
+      }
     }, () => {
-      fetch(this.state.searchURL)
-      .then(response => {
-          return response.json()
-      }).then(json => this.setState({
-        game: json,
-        gameTitle: ''
+      fetch("https://www.cheapshark.com/api/1.0/games?title=" + this.state.gameTitle +"&limit=5", this.state.requestOptions)
+      .then(res => {
+        return res.json()
+      })
+      .then(json => this.setState({
+        searchResults: json
       }),
-      (err) => console.log(err))
+      (err)=>console.log(err))
     })
   }
 
