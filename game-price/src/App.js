@@ -4,6 +4,7 @@ import HeaderMain from './Header'
 // import GameInfo from './GameInfo'
 // import Sales from './Sales'
 import GameList from './List'
+import { Input, Icon } from 'semantic-ui-react'
 
 // let baseUrl = 'http://localhost:3000'
 // let names
@@ -86,21 +87,23 @@ class App extends Component {
       <>
         <div class='mainContainer'>
         <HeaderMain />
-        <div class='search'>
+          {/*make a search component with semantic style*/}
+        <div class='search' align='center'>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor='gameTitle'> Title </label>
+          {/*<label htmlFor='gameTitle'> Title </label>*/}
+          <Icon color='blue' name='search' />
           <div class='ui input'>
-          <input
+          <Input
             placeholder='Search...'
             id='gameTitle'
             type='text'
             value={this.state.gameTitle}
             onChange={this.handleChange}
             />
-          <input
+          <Input
             class='ui button'
             type='submit'
-            value='Find Game Info'
+            value='Find Best Price'
             />
           </div>
         </form>
