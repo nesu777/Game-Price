@@ -4,6 +4,7 @@ import HeaderMain from './HeaderMain'
 // import GameInfo from './GameInfo'
 // import Sales from './Sales'
 import GameList from './GameList'
+import SearchPage from './SearchPage'
 import { Input, Icon } from 'semantic-ui-react'
 
 // let baseUrl = 'http://localhost:3000'
@@ -21,7 +22,6 @@ class App extends Component {
       searchURL: '',
       gamesOnSale: [],
       requestOptions: {},
-      searchResults: []
     }
 
       // this.handleChange = this.handleChange.bind(this)
@@ -74,7 +74,8 @@ class App extends Component {
         return res.json()
       })
       .then(json => this.setState({
-        searchResults: json
+        searchResults: json,
+        gameTitle: ''
       }),
       (err)=>console.log(err))
     })
@@ -87,13 +88,13 @@ class App extends Component {
   render() {
     return (
       <>
-        <div class='mainContainer'>
+        <div className='mainContainer'>
         <HeaderMain />
           {/*make a search component with semantic style*/}
-        <div class='search' align='center'>
+        <div className='search' align='center'>
         <form onSubmit={this.handleSubmit}>
           <Icon size='big' color='blue' name='search' />
-          <div class='ui input'>
+          <div className='ui input'>
           <Input
             size='huge'
             placeholder='Search...'
@@ -103,13 +104,16 @@ class App extends Component {
             onChange={this.handleChange}
             />
           <input
-            class='ui button'
+            className='ui button'
             type='submit'
             value='Find Best Price'
             />
           </div>
         </form>
         </div>
+        {
+          (this.state.searchResults) ? <SearchPage searchResults={this.state.searchResults}/> : ''
+        }
         <h1 align='center'>On Sale Now!</h1>
         <GameList gamesOnSale={this.state.gamesOnSale}/>
         </div>
