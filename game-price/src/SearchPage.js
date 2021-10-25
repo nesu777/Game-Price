@@ -4,7 +4,21 @@ class SearchPage extends Component {
 
   render(){
     return(
-      <p>You searched</p>
+      <table>
+        <tbody>
+        {
+          this.props.searchResults.map(game => {
+            return(
+              <tr key={game.gameID}>
+                <td>
+                  {game.external}
+                </td>
+              </tr>
+            )
+          })
+        }
+        </tbody>
+      </table>
     )
   }
 }
