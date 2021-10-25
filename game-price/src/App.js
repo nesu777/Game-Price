@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import HeaderMain from './Header'
 import GameInfo from './GameInfo'
 import Sales from './Sales'
-import GameList from './List'
 
 // let baseUrl = 'http://localhost:3000'
 // let names
@@ -111,7 +110,7 @@ class App extends Component {
           : ''
         }
         <h1>On Sale Now!</h1>
-        <GameList />
+        {/*<GameList gamesOnSale={this.state.gamesOnSale}/>*/}
         <Sales gamesOnSale={this.state.gamesOnSale} />
       </>
     );
