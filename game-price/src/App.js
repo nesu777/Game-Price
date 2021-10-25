@@ -54,7 +54,6 @@ class App extends Component {
 
 
   handleChange = (event) => {
-    //console.log(event.target.id)
     this.setState({
       [event.target.id]: event.target.value
     })
@@ -87,6 +86,7 @@ class App extends Component {
       <>
         <div class='mainContainer'>
         <HeaderMain />
+        <div class='search'>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='gameTitle'> Title </label>
           <div class='ui input'>
@@ -104,8 +104,8 @@ class App extends Component {
             />
           </div>
         </form>
-
-        <h1>On Sale Now!</h1>
+        </div>
+        <h1 align='center'>On Sale Now!</h1>
         <GameList gamesOnSale={this.state.gamesOnSale}/>
         {/*<Sales gamesOnSale={this.state.gamesOnSale} />*/}
         </div>

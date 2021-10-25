@@ -5,7 +5,15 @@ class GameList extends Component {
 
   render(){
     return(
-      <Table>
+      <div>
+      <Table color='blue' celled striped inverted>
+      <Table.Header>
+      <Table.Row>
+        <Table.HeaderCell>Game</Table.HeaderCell>
+        <Table.HeaderCell>Price</Table.HeaderCell>
+        <Table.HeaderCell>Rating</Table.HeaderCell>
+      </Table.Row>
+      </Table.Header>
         {
           this.props.gamesOnSale.map(game => {
             return(
@@ -13,11 +21,25 @@ class GameList extends Component {
                 <Table.Cell>
                   <Label>{game.title}</Label>
                 </Table.Cell>
+                <Table.Cell>
+                  <Label>{game.price}</Label>
+                </Table.Cell>
+                <Table.Cell>
+                  <Label>{game.rating}</Label>
+                </Table.Cell>
               </Table.Row>
             )
           })
         }
+      <Table.Footer>
+      <Table.Row>
+        <Table.HeaderCell link>More Games</Table.HeaderCell>
+        <Table.HeaderCell></Table.HeaderCell>
+        <Table.HeaderCell />
+      </Table.Row>
+      </Table.Footer>
       </Table>
+      </div>
     )
   }
 }

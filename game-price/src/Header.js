@@ -5,7 +5,7 @@ const HeaderMain = () => (
   <Header as='h1' color='blue'>
     <Icon name='gamepad' />
     <Header.Content>G2B</Header.Content>
-  <Menu>
+  <Menu color='orange' inverted>
     <Menu.Item link>Home</Menu.Item>
     <Menu.Item link>All Games</Menu.Item>
     <Menu.Item link>New Games</Menu.Item>
