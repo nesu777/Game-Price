@@ -1,8 +1,9 @@
 import './App.css';
 import React, { Component } from 'react'
+import HeaderMain from './Header'
 import GameInfo from './GameInfo'
 import Sales from './Sales'
-import HeaderMain from './Header'
+import GameList from './List'
 
 // let baseUrl = 'http://localhost:3000'
 // let names
@@ -88,9 +89,12 @@ class App extends Component {
     return (
       <>
         <HeaderMain />
+        
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor='gameTitle'> Title </label>
+          <label htmlFor='gameTitle' align='center'> Title </label>
+          <div class='ui input'>
           <input
+            placeholder='Search...'
             id='gameTitle'
             type='text'
             value={this.state.gameTitle}
@@ -100,12 +104,14 @@ class App extends Component {
             type='submit'
             value='Find Game Info'
             />
+          </div>
         </form>
         {(this.state.game)
           ? <GameInfo game={this.state.game}/>
           : ''
         }
         <h1>On Sale Now!</h1>
+        <GameList />
         <Sales gamesOnSale={this.state.gamesOnSale} />
       </>
     );
