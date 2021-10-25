@@ -22,7 +22,7 @@ class GameList extends Component {
                   <Label>{game.title}</Label>
                 </Table.Cell>
                 <Table.Cell>
-                  <Label>{game.salePrice}</Label>
+                  <Label>${game.salePrice}</Label>
                 </Table.Cell>
                 <Table.Cell>
                   <Label>{game.steamRatingPercent}</Label>
