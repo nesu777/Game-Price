@@ -1,8 +1,8 @@
 import './App.css';
 import React, { Component } from 'react'
 import HeaderMain from './Header'
-import GameInfo from './GameInfo'
-import Sales from './Sales'
+// import GameInfo from './GameInfo'
+// import Sales from './Sales'
 import GameList from './List'
 
 // let baseUrl = 'http://localhost:3000'
@@ -60,16 +60,13 @@ class App extends Component {
     })
   }
 
+  //Revise to pull game url from cheapshark
   handleSubmit = (event) => {
-    //console.log(event.target.value)
     event.preventDefault()
     this.setState({
       searchURL: this.state.baseURL + this.state.apiKey +
       this.state.query + this.state.gameTitle
     }, () => {
-      // fetch request will go here
-      // to read more fetch
-      // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
       fetch(this.state.searchURL)
       .then(response => {
           return response.json()
@@ -88,8 +85,8 @@ class App extends Component {
   render() {
     return (
       <>
+        <div class='mainContainer'>
         <HeaderMain />
-        
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='gameTitle'> Title </label>
           <div class='ui input'>
@@ -107,13 +104,11 @@ class App extends Component {
             />
           </div>
         </form>
-        {(this.state.game)
-          ? <GameInfo game={this.state.game}/>
-          : ''
-        }
+
         <h1>On Sale Now!</h1>
         <GameList gamesOnSale={this.state.gamesOnSale}/>
-        <Sales gamesOnSale={this.state.gamesOnSale} />
+        {/*<Sales gamesOnSale={this.state.gamesOnSale} />*/}
+        </div>
       </>
     );
   }
