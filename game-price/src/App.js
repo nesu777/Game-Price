@@ -2,9 +2,10 @@ import './App.css';
 import React, { Component } from 'react'
 import GameInfo from './GameInfo'
 import Sales from './Sales'
+import HeaderMain from './Header'
 
 // let baseUrl = 'http://localhost:3000'
-let names
+// let names
 
 class App extends Component {
   constructor(props) {
@@ -87,6 +88,7 @@ class App extends Component {
     // console.log(this.state)
     return (
       <>
+        <HeaderMain />
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='gameTitle'> Title </label>
           <input
