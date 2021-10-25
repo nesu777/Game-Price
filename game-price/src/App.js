@@ -90,17 +90,17 @@ class App extends Component {
           {/*make a search component with semantic style*/}
         <div class='search' align='center'>
         <form onSubmit={this.handleSubmit}>
-          {/*<label htmlFor='gameTitle'> Title </label>*/}
-          <Icon color='blue' name='search' />
+          <Icon size='big' color='blue' name='search' />
           <div class='ui input'>
           <Input
+            size='huge'
             placeholder='Search...'
             id='gameTitle'
             type='text'
             value={this.state.gameTitle}
             onChange={this.handleChange}
             />
-          <Input
+          <input
             class='ui button'
             type='submit'
             value='Find Best Price'
