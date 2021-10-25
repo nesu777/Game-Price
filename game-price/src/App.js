@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import HeaderMain from './Header'
 import GameInfo from './GameInfo'
 import Sales from './Sales'
+import GameList from './List'
 
 // let baseUrl = 'http://localhost:3000'
 // let names
@@ -90,7 +91,7 @@ class App extends Component {
         <HeaderMain />
         
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor='gameTitle' align='center'> Title </label>
+          <label htmlFor='gameTitle'> Title </label>
           <div class='ui input'>
           <input
             placeholder='Search...'
@@ -100,6 +101,7 @@ class App extends Component {
             onChange={this.handleChange}
             />
           <input
+            class='ui button'
             type='submit'
             value='Find Game Info'
             />
@@ -110,7 +112,7 @@ class App extends Component {
           : ''
         }
         <h1>On Sale Now!</h1>
-        {/*<GameList gamesOnSale={this.state.gamesOnSale}/>*/}
+        <GameList gamesOnSale={this.state.gamesOnSale}/>
         <Sales gamesOnSale={this.state.gamesOnSale} />
       </>
     );

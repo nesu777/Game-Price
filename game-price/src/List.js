@@ -1,25 +1,32 @@
 import React from 'react'
-import { List } from 'semantic-ui-react'
-import App from './App'
+import { Table, Label } from 'semantic-ui-react'
+// import App from './App'
 
 const GameList = () => (
 
-      <List divided verticalAlign='middle'>
-        <List.Item>
-        {
-          this.props.gamesOnSale.map(game => {
-            return(
-              <List.Content key={game.id}>
-                <List.Content>
-                  {game.title}
-                </List.Content>
-              </List.Content>
-            )
-          })
-        }
-        </List.Item>
-      </List>
+      <Table divided verticalAlign='middle'>
+        <Table.Row>
+          <Table.Cell>
+            <Label>FIFA 22</Label>
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>
+            <Label>Call Of Duty</Label>
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>
+            <Label>Far Cry 6</Label>
+          </Table.Cell>
+        </Table.Row>
+      </Table>
     )
+
+
+export default GameList
+
+
 //   <List divided verticalAlign='middle'>
 //     <List.Item>
 //       <List.Content floated='right'>
@@ -52,4 +59,3 @@ const GameList = () => (
 //   </List>
 // )
 
-export default GameList

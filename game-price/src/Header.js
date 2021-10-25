@@ -2,7 +2,7 @@ import React from 'react'
 import { Header, Icon, Menu } from 'semantic-ui-react'
 
 const HeaderMain = () => (
-  <Header as='h1' color='blue' background-color='grey'>
+  <Header as='h1' color='blue'>
     <Icon name='gamepad' />
     <Header.Content>G2B</Header.Content>
   <Menu>
