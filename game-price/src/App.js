@@ -63,6 +63,7 @@ class App extends Component {
 
   //Revise to pull game url from cheapshark
   handleSubmit = (event) => {
+    event.preventDefault()
     this.setState({
       requestOptions: {
         method: 'GET',
