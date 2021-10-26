@@ -16,12 +16,12 @@ class SearchPage extends Component {
                   <Image src='{game.img}' size='small' />
                 </Table.Cell>
                 <Table.Cell>
-                  <Header as='h4' floated='left'>${game.salePrice}</Header>
+                  <Header as='h3'>${game.salePrice}</Header>
                 </Table.Cell>
                 <Table.Cell>
                   <Comment>
                     <Comment.Content>
-                      <Comment.Text> Great Game! </Comment.Text>
+                      <Comment.Text> Great Game! {game.gameID.comment}</Comment.Text>
                     </Comment.Content>
                   </Comment>
                 </Table.Cell>
