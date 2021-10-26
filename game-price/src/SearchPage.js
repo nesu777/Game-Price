@@ -1,24 +1,25 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
+import { Table } from 'semantic-ui-react'
 
 class SearchPage extends Component {
 
   render(){
     return(
-      <table>
-        <tbody>
+      <Table>
+        <Table.Body>
         {
           this.props.searchResults.map(game => {
             return(
-              <tr key={game.gameID}>
-                <td>
+              <Table.Row key={game.gameID}>
+                <Table.Cell>
                   {game.external}
-                </td>
-              </tr>
+                </Table.Cell>
+              </Table.Row>
             )
           })
         }
-        </tbody>
-      </table>
+        </Table.Body>
+      </Table>
     )
   }
 }

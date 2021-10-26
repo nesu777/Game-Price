@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { Table } from 'semantic-ui-react'
 
 class GameInfo extends Component {
 	render() {
 		return(
-			<div>
-				<h1>Title: {this.props.game.Title} </h1>
-			</div>
+			<Div>
+				<Header>Title: {this.props.game.Title} </Header>
+				<Image>
+			</Div>
 			)
 	}
 }
