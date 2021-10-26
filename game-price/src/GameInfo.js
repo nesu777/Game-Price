@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import { Table } from 'semantic-ui-react'
+import { Segment, Header, Image, } from 'semantic-ui-react'
+
+//Show Page Component
 
 class GameInfo extends Component {
 	render() {
 		return(
-			<Div>
+			<Segment>
 				<Header>Title: {this.props.game.Title} </Header>
 				<Image>
-			</Div>
+			</Segment>
 			)
 	}
 }
