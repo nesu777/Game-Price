@@ -2,7 +2,6 @@ import './App.css';
 import React, { Component } from 'react'
 import HeaderMain from './HeaderMain'
 // import GameInfo from './GameInfo'
-// import Sales from './Sales'
 import GameList from './GameList'
 import SearchPage from './SearchPage'
 import { Input, Icon } from 'semantic-ui-react'
@@ -91,7 +90,7 @@ class App extends Component {
       <>
         <div className='mainContainer'>
         <HeaderMain />
-          {/*make a search component with semantic style*/}
+          <br/>
         <div className='search' align='center'>
         <form onSubmit={this.handleSubmit}>
           <Icon size='big' color='blue' name='search' />

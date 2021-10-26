@@ -5,7 +5,9 @@ class SearchPage extends Component {
 
   render(){
     return(
-      <Table>
+      <div class='ui container'>
+      <br/>
+      <Table color='blue'  selectable>
         <Table.Body>
         {
           this.props.searchResults.map(game => {
@@ -31,6 +33,7 @@ class SearchPage extends Component {
         }
         </Table.Body>
       </Table>
+      </div>
     )
   }
 }

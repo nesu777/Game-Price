@@ -5,7 +5,7 @@ class GameList extends Component {
 
   render(){
     return(
-      <div>
+      <div class='ui fluid container'>
       <Table color='blue' celled striped inverted>
       <Table.Header>
       <Table.Row>
