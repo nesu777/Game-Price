@@ -15,10 +15,10 @@ class SearchPage extends Component {
               <Table.Row key={game.gameID}>
                 <Table.Cell>
                   <Header as='h3'>{game.external}</Header>
-                  <Image src='{game.img}' size='small' />
+                  <Image src={game.thumb} size='small' />
                 </Table.Cell>
                 <Table.Cell>
-                  <Header as='h3'>${game.salePrice}</Header>
+                  <Header as='h3'>${game.cheapest}</Header>
                 </Table.Cell>
                 <Table.Cell>
                   <Comment>
