@@ -71,7 +71,7 @@ class App extends Component {
         redirect: 'follow'
       }
     }, () => {
-      fetch("https://www.cheapshark.com/api/1.0/games?title=" + this.state.gameTitle +"&limit=5", this.state.requestOptions)
+      fetch("https://www.cheapshark.com/api/1.0/games?title=" + this.state.gameTitle +"&limit=10", this.state.requestOptions)
       .then(res => {
         return res.json()
       })
