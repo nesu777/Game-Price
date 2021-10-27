@@ -121,15 +121,12 @@ class App extends Component {
         </form>
         </div>
         {
-<<<<<<< HEAD
-          (this.state.searchResults) ? <SearchPage sendData={this.getData} searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
-=======
+
 
           (this.props.gameIDFound) ? <p>gameID found</p> : ''
         }
         {
-          (this.state.searchResults) ? <SearchPage searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
->>>>>>> refs/remotes/origin/main
+          (this.state.searchResults) ? <SearchPage sendData={this.getData} searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
         }
         <h1 align='center'>On Sale Now!</h1>
         <GameList gamesOnSale={this.state.gamesOnSale}/>
