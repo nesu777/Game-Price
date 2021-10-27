@@ -7,10 +7,7 @@ class GameInfo extends Component {
 	render() {
 		return(
 		this.props.gamesOnSale.map(game => {
-<<<<<<< HEAD
 		// console.log(game)
-=======
->>>>>>> 3dd2d15 (css and error management)
 		return(
 			<Item key={game.id}>
       			<Item.Image src={game.thumb} size='huge' />
