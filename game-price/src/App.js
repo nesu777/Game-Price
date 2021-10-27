@@ -82,6 +82,13 @@ class App extends Component {
     })
   }
 
+    getData = (data) => {
+      this.setState({
+        showThisGame: data
+      })
+      console.log(this.state.showThisGame)
+    }
+
 
   componentDidMount(){
     this.getGames()
@@ -114,11 +121,15 @@ class App extends Component {
         </form>
         </div>
         {
+<<<<<<< HEAD
+          (this.state.searchResults) ? <SearchPage sendData={this.getData} searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
+=======
 
           (this.props.gameIDFound) ? <p>gameID found</p> : ''
         }
         {
           (this.state.searchResults) ? <SearchPage searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
+>>>>>>> refs/remotes/origin/main
         }
         <h1 align='center'>On Sale Now!</h1>
         <GameList gamesOnSale={this.state.gamesOnSale}/>

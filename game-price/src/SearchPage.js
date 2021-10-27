@@ -28,6 +28,7 @@ class SearchPage extends Component {
         showThisGame: json
       }),
     (err) => console.log(err))
+    .then(this.props.sendData(this.state.showThisGame))
     })
   }
 
