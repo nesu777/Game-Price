@@ -8,7 +8,7 @@ import { Input, Icon } from 'semantic-ui-react'
 //internal calls
 import SearchPage from './SearchPage'
 
-let baseUrl = REACT_APP_BASEURL
+//let baseUrl = process.env.REACT_APP_BASEURL
 
 class App extends Component {
   constructor(props) {
