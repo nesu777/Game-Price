@@ -115,7 +115,11 @@ class App extends Component {
         </form>
         </div>
         {
+<<<<<<< HEAD
           (this.props.gameIDFound) ? <p>gameID found</p> : ''
+=======
+          (this.props.gameIDFound === true) ? <GameInfo gamesOnSale={this.state.gamesOnSale}/> : ''
+>>>>>>> 3dd2d15 (css and error management)
         }
         {
           (this.state.searchResults) ? <SearchPage searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''

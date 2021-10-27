@@ -7,10 +7,13 @@ class GameInfo extends Component {
 	render() {
 		return(
 		this.props.gamesOnSale.map(game => {
+<<<<<<< HEAD
 		// console.log(game)
+=======
+>>>>>>> 3dd2d15 (css and error management)
 		return(
 			<Item key={game.id}>
-      			<Item.Image src='https://cdn.cloudflare.steamstatic.com/steam/apps/1506830/capsule_616x353.jpg?t=1633113405' size='big' />
+      			<Item.Image src={game.thumb} size='huge' />
       			<Item.Content>
         			<Item.Header as='a'>{game.title}</Item.Header>
         			<Item.Header as='h4'>${game.salePrice}</Item.Header>
