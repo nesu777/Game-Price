@@ -21,7 +21,7 @@ class SearchPage extends Component {
       },
 
     }, () => {
-      fetch("https://www.cheapshark.com/api/1.0/games?id=" + this.state.gameID)
+      fetch("https://www.cheapshark.com/api/1.0/games?id=" + this.state.showThisGameID)
       .then(res => {
         return res.json()
       })
@@ -42,9 +42,9 @@ class SearchPage extends Component {
         {
           this.props.searchResults.map(game => {
             return(
-              <Table.Row key={game.gameID}>
+              <Table.Row key={game.gameID} onClick={(e) => this.setState({showThisGameID: game.gameID})}>
                 <Table.Cell>
-                  <Header as='h3' onClick={(e) => {this.setState({showThisGameID: game.gameID, gameIDFound: true})}}>{game.external}</Header>
+                  <Header as='h3' onClick={this.showSearchedGame} >{game.external}</Header>
                   <Image src={game.thumb} size='small' />
                 </Table.Cell>
                 <Table.Cell>

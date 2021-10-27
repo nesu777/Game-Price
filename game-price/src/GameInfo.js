@@ -7,7 +7,7 @@ class GameInfo extends Component {
 	render() {
 		return(
 		this.props.gamesOnSale.map(game => {
-		console.log(game)
+		// console.log(game)
 		return(
 			<Item key={game.id}>
       			<Item.Image src='https://cdn.cloudflare.steamstatic.com/steam/apps/1506830/capsule_616x353.jpg?t=1633113405' size='big' />
@@ -27,7 +27,7 @@ class GameInfo extends Component {
     		</Item>
 			)
 			}
-		)	
+		)
 	)}
 }
 
