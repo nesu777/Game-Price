@@ -44,7 +44,7 @@ class SearchPage extends Component {
               <Table.Row key={game.gameID} onClick={(e) => this.setState({showThisGameID: game.gameID})}>
                 <Table.Cell>
                   <Header as='h3' onClick={this.showSearchedGame} >{game.external}</Header>
-                  <Image src={game.thumb} size='small' />
+                  <Image src={game.thumb} size='small' onClick={this.showSearchedGame} />
                 </Table.Cell>
                 <Table.Cell>
                   <Header as='h3'>${game.cheapest}</Header>
