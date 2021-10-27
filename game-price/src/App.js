@@ -3,8 +3,10 @@ import React, { Component } from 'react'
 import HeaderMain from './HeaderMain'
 // import GameInfo from './GameInfo'
 import GameList from './GameList'
-import SearchPage from './SearchPage'
 import { Input, Icon } from 'semantic-ui-react'
+
+//internal calls
+import SearchPage from './SearchPage'
 
 // let baseUrl = 'http://localhost:3000'
 // let names
@@ -21,6 +23,7 @@ class App extends Component {
       searchURL: '',
       gamesOnSale: [],
       requestOptions: {},
+      showThisGame: '',
     }
 
       // this.handleChange = this.handleChange.bind(this)
@@ -81,6 +84,7 @@ class App extends Component {
     })
   }
 
+
   componentDidMount(){
     this.getGames()
   }
@@ -112,7 +116,10 @@ class App extends Component {
         </form>
         </div>
         {
-          (this.state.searchResults) ? <SearchPage searchResults={this.state.searchResults}/> : ''
+          (this.props.gameIDFound === true) ? <p>gameID found</p> : ''
+        }
+        {
+          (this.state.searchResults) ? <SearchPage searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
         }
         <h1 align='center'>On Sale Now!</h1>
         <GameList gamesOnSale={this.state.gamesOnSale}/>
