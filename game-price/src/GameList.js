@@ -5,7 +5,7 @@ class GameList extends Component {
 
   render(){
     return(
-      <div class='ui fluid container'>
+      <div className='ui fluid container'>
       <Table color='blue' celled striped inverted>
       <Table.Header>
       <Table.Row>
@@ -14,6 +14,7 @@ class GameList extends Component {
         <Table.HeaderCell>Rating</Table.HeaderCell>
       </Table.Row>
       </Table.Header>
+      <Table.Body>
         {
           this.props.gamesOnSale.map(game => {
             return(
@@ -31,9 +32,10 @@ class GameList extends Component {
             )
           })
         }
+      </Table.Body>  
       <Table.Footer>
       <Table.Row>
-        <Table.HeaderCell link>More Games</Table.HeaderCell>
+        <Table.HeaderCell link='true'>More Games</Table.HeaderCell>
         <Table.HeaderCell></Table.HeaderCell>
         <Table.HeaderCell />
       </Table.Row>

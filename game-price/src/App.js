@@ -1,7 +1,7 @@
 import './App.css';
 import React, { Component } from 'react'
 import HeaderMain from './HeaderMain'
-// import GameInfo from './GameInfo'
+import GameInfo from './GameInfo'
 import GameList from './GameList'
 import { Input, Icon } from 'semantic-ui-react'
 
@@ -123,6 +123,7 @@ class App extends Component {
         }
         <h1 align='center'>On Sale Now!</h1>
         <GameList gamesOnSale={this.state.gamesOnSale}/>
+        <GameInfo gamesOnSale={this.state.gamesOnSale}/>
         </div>
       </>
     );

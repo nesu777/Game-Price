@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Header, Icon, Menu } from 'semantic-ui-react'
 
-const HeaderMain = () => (
-  <div class='ui fluid container'>
+class HeaderMain extends Component{
+  render(){
+    return( 
+  <div className='ui fluid container'>
   <Header as='h1' color='orange'>
     <Icon color='blue' name='gamepad' />
     <Header.Content>G2B</Header.Content>
@@ -17,5 +19,6 @@ const HeaderMain = () => (
   </Header>
   </div>
 )
-
+}
+}
 export default HeaderMain
