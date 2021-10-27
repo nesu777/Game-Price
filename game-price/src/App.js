@@ -23,7 +23,6 @@ class App extends Component {
       searchURL: '',
       gamesOnSale: [],
       requestOptions: {},
-      showThisGame: '',
     }
 
       // this.handleChange = this.handleChange.bind(this)

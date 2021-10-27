@@ -7,7 +7,6 @@ class SearchPage extends Component {
 
     this.state = {
       showThisGameID: '',
-      gameIDFound: false,
     }
     this.showSearchedGame = this.showSearchedGame.bind(this)
   }
