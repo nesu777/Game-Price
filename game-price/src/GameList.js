@@ -49,7 +49,7 @@ class GameList extends Component {
         {
           this.props.gamesOnSale.map(game => {
             return(
-              <Table.Row key={game.id} onClick={(e) => this.setState({showThisGameID: game.gameID})}>
+              <Table.Row key={game.gameID} onClick={(e) => this.setState({showThisGameID: game.gameID})}>
                 <Table.Cell>
                   <Label onClick={this.showSearchedGame}>{game.title}</Label>
                 </Table.Cell>
