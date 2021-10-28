@@ -23,7 +23,8 @@ class App extends Component {
       searchURL: '',
       gamesOnSale: [],
       requestOptions: {},
-      showThisGame: ''
+      showThisGame: '',
+      hasData: false
     }
 
       // this.handleChange = this.handleChange.bind(this)
@@ -87,6 +88,7 @@ class App extends Component {
     getData = (data) => {
       this.setState({
         showThisGame: data,
+        hasData: true
       })
       console.log(this.state.showThisGame)
     }
@@ -131,25 +133,28 @@ class App extends Component {
         {
           (this.state.searchResults && this.state.showThisGame !== '') ? <GameInfo game={this.state.showThisGame}/> : ''
         }
-
-      {/*  <Route
+        {
+      /*  <Route
           path="/"
           exact
 <<<<<<< HEAD
           render={() =>
           <GameInfo sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/>}
 =======
-          render={() => 
+          render={() =>
           <GameList gamesOnSale={this.state.gamesOnSale}/>}
-        />*/}
-
-        <Route
+        />*/
+        }
+        {
+          (this.state.hasData === true) ?
+          <Route
           path="/show"
           exact
-          render={() => 
-          <GameInfo />}
->>>>>>> 7f47126 (show page after search on click ternary with prop)
-        />
+          render={
+          <GameInfo game={this.state.showThisGame} />}
+          />
+          : ''
+          }
 
         <Route
           path="/allgames"
