@@ -3,6 +3,35 @@ import { Table, Label } from 'semantic-ui-react'
 
 class GameList extends Component {
 
+  constructor(props){
+    super(props)
+
+    this.state = {
+      showThisGameID: '',
+    }
+    this.showSearchedGame = this.showSearchedGame.bind(this)
+  }
+
+  showSearchedGame = (event) => {
+    this.setState({
+      requestOptions: {
+        method: 'GET',
+        redirect: 'follow'
+      },
+
+    }, () => {
+      fetch("https://www.cheapshark.com/api/1.0/games?id=" + this.state.showThisGameID)
+      .then(res => {
+        return res.json()
+      })
+      .then(json => this.setState({
+        showThisGame: json
+      }),
+    (err) => console.log(err))
+    .then(this.props.sendData(this.state.showThisGame))
+    })
+  }
+
   render(){
     return(
       <div className='ui fluid container'>
@@ -18,9 +47,9 @@ class GameList extends Component {
         {
           this.props.gamesOnSale.map(game => {
             return(
-              <Table.Row key={game.id}>
+              <Table.Row key={game.id} onClick={(e) => this.setState({showThisGameID: game.gameID})}>
                 <Table.Cell>
-                  <Label>{game.title}</Label>
+                  <Label onClick={this.showSearchedGame}>{game.title}</Label>
                 </Table.Cell>
                 <Table.Cell>
                   <Label>${game.salePrice}</Label>
@@ -32,7 +61,7 @@ class GameList extends Component {
             )
           })
         }
-      </Table.Body>  
+      </Table.Body>
       <Table.Footer>
       <Table.Row>
         <Table.HeaderCell link='true'>More Games</Table.HeaderCell>

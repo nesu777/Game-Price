@@ -134,7 +134,7 @@ class App extends Component {
           (this.state.showingPage === false) ? <h1 align='center'>On Sale Now!</h1> : ''
         }
         {
-          (this.state.showingPage === false) ? <GameList gamesOnSale={this.state.gamesOnSale}/> : ''
+          (this.state.showingPage === false) ? <GameList sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/> : ''
         }
         </div>
       </>
