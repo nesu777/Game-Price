@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react'
 import HeaderMain from './HeaderMain'
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import GameInfo from './GameInfo'
 import GameList from './GameList'
 import { Input, Icon } from 'semantic-ui-react'
@@ -99,6 +100,7 @@ class App extends Component {
     return (
       <>
         <div className='mainContainer'>
+        <Router>
         <HeaderMain />
           <br/>
         <div className='search' align='center'>
@@ -121,6 +123,22 @@ class App extends Component {
           </div>
         </form>
         </div>
+
+        <Route
+          path="/"
+          exact
+          render={() => 
+          <GameInfo gamesOnSale={this.state.gamesOnSale}/>}
+        />
+
+        <Route
+          path="/allgames"
+          exact
+          render={() => 
+          <GameList gamesOnSale={this.state.gamesOnSale}/>}
+        />
+        
+      </Router>
         {
           (this.props.gameIDFound) ? <p>gameID found</p> : ''
         }
