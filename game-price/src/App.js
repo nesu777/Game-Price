@@ -5,6 +5,7 @@ import Footer from './Footer'
 import HomePage from './HomePage'
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import GameInfo from './GameInfo'
+import Featured from './Featured'
 import GameList from './GameList'
 import { Input, Icon } from 'semantic-ui-react'
 
@@ -162,6 +163,13 @@ class App extends Component {
           exact
           render={() =>
           <GameList sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/>}
+        />
+
+        <Route
+          path="/featured"
+          exact
+          render={() =>
+          <Featured />}
         />
 
       </Router>

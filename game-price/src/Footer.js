@@ -32,7 +32,7 @@ class Footer extends Component{
           <Grid.Column width={7}>
             <Header inverted as='h4' content='Contact Us' />
             <p>
-              emailus@g2Bsupport.com
+              emailus@g2bsupport.com
             </p>
           </Grid.Column>
         </Grid>

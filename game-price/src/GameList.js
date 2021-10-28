@@ -34,7 +34,7 @@ class GameList extends Component {
 
   render(){
     return(
-      <div className='ui fluid container'>
+      <div className='ui container'>
       <br/>
       <Header size='huge' align='center'>On Sale Now!</Header>
       <Table color='blue' celled striped inverted>
