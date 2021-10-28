@@ -125,23 +125,23 @@ class App extends Component {
         </div>
 
         {
-          (this.state.searchResults && this.state.showThisGame === '') ? <SearchPage sendData={this.getData} searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
+          (this.state.searchResults) ? <SearchPage sendData={this.getData} searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
         }
 
         <Route
           path="/"
           exact
-          render={() => 
-          <GameInfo gamesOnSale={this.state.gamesOnSale}/>}
+          render={() =>
+          <GameInfo sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/>}
         />
 
         <Route
           path="/allgames"
           exact
-          render={() => 
-          <GameList gamesOnSale={this.state.gamesOnSale}/>}
+          render={() =>
+          <GameList sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/>}
         />
-        
+
       </Router>
         {
           (this.props.gameIDFound) ? <p>gameID found</p> : ''
