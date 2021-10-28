@@ -1,6 +1,8 @@
 import './App.css';
 import React, { Component } from 'react'
 import HeaderMain from './HeaderMain'
+import Footer from './Footer'
+import HomePage from './HomePage'
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import GameInfo from './GameInfo'
 import GameList from './GameList'
@@ -129,26 +131,14 @@ class App extends Component {
         }
 
         {
-          (this.state.searchResults && this.state.showThisGame !== '') ? <GameInfo game={this.state.showThisGame}/> : ''
+          (this.state.showThisGame !== '') ? <GameInfo showThisGame={this.state.showThisGame} searchResults={this.state.searchResults}/> : ''
         }
 
-      {/*  <Route
-          path="/"
-          exact
-<<<<<<< HEAD
-          render={() =>
-          <GameInfo sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/>}
-=======
-          render={() => 
-          <GameList gamesOnSale={this.state.gamesOnSale}/>}
-        />*/}
-
         <Route
-          path="/show"
+          path="/home"
           exact
           render={() => 
-          <GameInfo />}
->>>>>>> 7f47126 (show page after search on click ternary with prop)
+          <HomePage />}
         />
 
         <Route
@@ -159,6 +149,7 @@ class App extends Component {
         />
 
       </Router>
+      <Footer />
         </div>
       </>
     );

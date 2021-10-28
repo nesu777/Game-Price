@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Label } from 'semantic-ui-react'
+import { Table, Label, Header } from 'semantic-ui-react'
 
 class GameList extends Component {
 
@@ -35,7 +35,8 @@ class GameList extends Component {
   render(){
     return(
       <div className='ui fluid container'>
-      <h1 align='center'>On Sale Now!</h1>
+      <br/>
+      <Header size='huge' align='center'>On Sale Now!</Header>
       <Table color='blue' celled striped inverted>
       <Table.Header>
       <Table.Row>

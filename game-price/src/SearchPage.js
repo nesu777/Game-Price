@@ -35,7 +35,7 @@ class SearchPage extends Component {
 
   render(){
     return(
-      <div class='ui container'>
+      <div className='ui container'>
       <br/>
       <Table color='blue'  selectable>
         <Table.Body>

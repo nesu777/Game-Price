@@ -5,15 +5,17 @@ import { Item, Comment } from 'semantic-ui-react'
 
 class GameInfo extends Component {
 render(){
+	return(
+		this.props.searchResults.map(game => {
 		return(
-			<Item key={this.props.game.id}>
-      			<Item.Image src={this.props.game.thumb} size='huge' />
+			<Item key={game.id}>
       			<Item.Content>
-        			<Item.Header as='a'>{this.props.game.title}</Item.Header>
-        			<Item.Header as='h4'>${this.props.game.salePrice}</Item.Header>
+        			<Item.Header as='h2'>{game.external}</Item.Header>
+        			<Item.Image src={game.thumb} size='huge' />
+        			<Item.Header as='h3'>${game.cheapest}</Item.Header>
         			<Item.Meta>Game Description</Item.Meta>
         			<Item.Description>
-          				{this.props.game.description}
+          				{game.description}
         			</Item.Description>
         			<Comment>
                     <Comment.Content>
@@ -23,6 +25,8 @@ render(){
       			</Item.Content>
     		</Item>
 			)
+		})
+		)
 	}
 }
 
