@@ -147,12 +147,12 @@ class App extends Component {
           <HomePage />}
         />
 
-        <Route
+        {/*<Route
           path="/aboutus"
           exact
           render={() =>
           <GameInfo showThisGame={this.showThisGame} />}
-        />
+        />*/}
 
         <Route
           path="/allgames"
