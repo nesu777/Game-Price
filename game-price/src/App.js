@@ -22,7 +22,7 @@ class App extends Component {
       searchURL: '',
       gamesOnSale: [],
       requestOptions: {},
-      showingPage: false,
+      showThisGame: ''
     }
 
       // this.handleChange = this.handleChange.bind(this)
@@ -86,7 +86,6 @@ class App extends Component {
     getData = (data) => {
       this.setState({
         showThisGame: data,
-        showingPage: true
       })
       console.log(this.state.showThisGame)
     }
@@ -131,10 +130,10 @@ class App extends Component {
           (this.state.searchResults) ? <SearchPage sendData={this.getData} searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
         }
         {
-          (this.state.showingPage === false) ? <h1 align='center'>On Sale Now!</h1> : ''
+          (this.state.showThisGame === '') ? <h1 align='center'>On Sale Now!</h1> : ''
         }
         {
-          (this.state.showingPage === false) ? <GameList sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/> : ''
+          (this.state.showThisGame === '') ? <GameList sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/> : ''
         }
         </div>
       </>
