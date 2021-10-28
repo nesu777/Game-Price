@@ -75,7 +75,7 @@ class App extends Component {
         redirect: 'follow'
       }
     }, () => {
-      fetch("https://www.cheapshark.com/api/1.0/games?title=" + this.state.gameTitle +"&limit=10", this.state.requestOptions)
+      fetch("https://www.cheapshark.com/api/1.0/games?title=" + this.state.gameTitle +"&limit=5", this.state.requestOptions)
       .then(res => {
         return res.json()
       })
@@ -137,25 +137,21 @@ class App extends Component {
         }
 
         {
-          (this.state.showThisGame !== '') ? <GameInfo showThisGame={this.state.showThisGame} searchResults={this.state.searchResults}/> : ''
+          (this.state.searchResults && this.state.showThisGame !== '') ? <GameInfo showThisGame={this.state.showThisGame} searchResults={this.state.searchResults}/> : ''
         }
-
-      {/*  <Route
-          path="/"
-          exact
-<<<<<<< HEAD
-          render={() =>
-          <GameInfo sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/>}
-=======
-          render={() =>
-          <GameList gamesOnSale={this.state.gamesOnSale}/>}
-        />*/}
 
         <Route
           path="/home"
           exact
           render={() =>
-          <GameInfo game={this.state.showThisGame} />}
+          <HomePage />}
+        />
+
+        <Route
+          path="/aboutus"
+          exact
+          render={() =>
+          <GameInfo showThisGame={this.showThisGame} />}
         />
 
         <Route

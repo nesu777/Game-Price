@@ -13,7 +13,7 @@ render(){
       				<Segment raised>
         			<Item.Header as='h1'>FIFA 22</Item.Header>
         			<Item.Image src='https://cdn.cloudflare.steamstatic.com/steam/apps/1506830/capsule_616x353.jpg?t=1633113405' size='huge' />
-        			<Item.Header as='h2' color='blue'>$39.99 <Icon name='gamepad' color='blue'/>
+        			<Item.Header as='h2' color='blue'>$59.99 <Icon name='gamepad' color='blue'/>
         			<br/><br/>
         			<button className='ui primary button'>Add to Cart</button>
         			<button className='ui secondary button'>Wish List<Icon name='star' color='orange' /></button>
