@@ -4,18 +4,16 @@ import { Item, Comment } from 'semantic-ui-react'
 //Show Page Component
 
 class GameInfo extends Component {
-	render() {
+render(){
 		return(
-		this.props.gamesOnSale.map(game => {
-		return(
-			<Item key={game.id}>
-      			<Item.Image src={game.thumb} size='huge' />
+			<Item key={this.props.game.id}>
+      			<Item.Image src={this.props.game.thumb} size='huge' />
       			<Item.Content>
-        			<Item.Header as='a'>{game.title}</Item.Header>
-        			<Item.Header as='h4'>${game.salePrice}</Item.Header>
+        			<Item.Header as='a'>{this.props.game.title}</Item.Header>
+        			<Item.Header as='h4'>${this.props.game.salePrice}</Item.Header>
         			<Item.Meta>Game Description</Item.Meta>
         			<Item.Description>
-          				{game.description}
+          				{this.props.game.description}
         			</Item.Description>
         			<Comment>
                     <Comment.Content>
@@ -25,9 +23,7 @@ class GameInfo extends Component {
       			</Item.Content>
     		</Item>
 			)
-			}
-		)
-	)}
+	}
 }
 
 export default GameInfo;

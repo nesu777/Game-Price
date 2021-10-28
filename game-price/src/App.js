@@ -128,11 +128,27 @@ class App extends Component {
           (this.state.searchResults) ? <SearchPage sendData={this.getData} searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
         }
 
-        <Route
+        {
+          (this.state.searchResults && this.state.showThisGame !== '') ? <GameInfo game={this.state.showThisGame}/> : ''
+        }
+
+      {/*  <Route
           path="/"
           exact
+<<<<<<< HEAD
           render={() =>
           <GameInfo sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/>}
+=======
+          render={() => 
+          <GameList gamesOnSale={this.state.gamesOnSale}/>}
+        />*/}
+
+        <Route
+          path="/show"
+          exact
+          render={() => 
+          <GameInfo />}
+>>>>>>> 7f47126 (show page after search on click ternary with prop)
         />
 
         <Route
@@ -143,9 +159,6 @@ class App extends Component {
         />
 
       </Router>
-        {
-          (this.props.gameIDFound) ? <p>gameID found</p> : ''
-        }
         </div>
       </>
     );
