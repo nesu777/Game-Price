@@ -87,10 +87,13 @@ class App extends Component {
   }
 
     getData = (data) => {
+      console.log('setting state')
       this.setState({
         showThisGame: data,
+      }, () => {
+        console.log(this.state.showThisGame)
       })
-      console.log(this.state.showThisGame)
+
     }
 
 
@@ -136,11 +139,22 @@ class App extends Component {
           (this.state.showThisGame !== '') ? <GameInfo showThisGame={this.state.showThisGame} searchResults={this.state.searchResults}/> : ''
         }
 
+      {/*  <Route
+          path="/"
+          exact
+<<<<<<< HEAD
+          render={() =>
+          <GameInfo sendData={this.getData} gamesOnSale={this.state.gamesOnSale}/>}
+=======
+          render={() =>
+          <GameList gamesOnSale={this.state.gamesOnSale}/>}
+        />*/}
+
         <Route
           path="/home"
           exact
-          render={() => 
-          <HomePage />}
+          render={() =>
+          <GameInfo game={this.state.showThisGame} />}
         />
 
         <Route

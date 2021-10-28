@@ -24,11 +24,13 @@ class SearchPage extends Component {
       .then(res => {
         return res.json()
       })
-      .then(json => this.setState({
-        showThisGame: json
-      }),
-    (err) => console.log(err))
-    .then(this.props.sendData(this.state.showThisGame))
+      .then((json) => {
+          this.props.sendData(json)
+          this.setState({
+            showThisGame: json
+          })
+        })
+    .catch((error) => {console.log(error)})
     })
   }
 
