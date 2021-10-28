@@ -110,7 +110,9 @@ class App extends Component {
           <Icon size='big' color='blue' name='search' />
           <div className='ui input'>
           <Input
+            color='blue'
             size='huge'
+            focus
             placeholder='Search...'
             id='gameTitle'
             type='text'
@@ -118,7 +120,7 @@ class App extends Component {
             onChange={this.handleChange}
             />
           <input
-            className='ui button'
+            className='ui primary button'
             type='submit'
             value='Find Best Price'
             />
