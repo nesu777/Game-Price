@@ -11,6 +11,7 @@ render(){
 			<Item key='{game.id}'>
       			<Item.Content>
       				<Segment raised>
+      				<br/>
         			<Item.Header as='h1' align='center'>About Us</Item.Header>
         			<Header as='h2' align='center' color='orange'>G2B<Icon name='gamepad' color='blue' align='center'/></Header>
         			<br/>
@@ -35,7 +36,8 @@ render(){
           				</Container>
           				<br/>
           				<p>&emsp; Magna ac placerat vestibulum lectus. Facilisi nullam vehicula ipsum a arcu cursus. Sit amet purus gravida quis blandit turpis. Facilisis sed odio morbi quis commodo odio. Nisl pretium fusce id velit ut tortor pretium viverra. Placerat in egestas erat imperdiet sed euismod.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo.Nisl pretium fusce id velit ut tortor pretium viverra. Placerat in egestas erat imperdiet sed euismod.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo.</p>
-							</Container>			
+							</Container>
+							<br/><br/><br/>			
 							</Item.Description>
         			</Segment>
         			<br/>

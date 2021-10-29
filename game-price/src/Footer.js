@@ -18,7 +18,7 @@ class Footer extends Component{
           <Grid.Column width={3}>
             <Header inverted as='h4' content='Affiliates' />
             <List link inverted>
-              <List.Item as='a'>Steam</List.Item>
+              <List.Item as='a'>Steam <Icon color='white' name='steam symbol'/></List.Item>
               <List.Item as='a'>CheapShark</List.Item>
             </List>
           </Grid.Column>

@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+// import GameComment from './Comment'
 import { Item, Comment, Segment, Divider, Icon, Header, Container } from 'semantic-ui-react'
 
 //Show Page Component
 
 class GameInfo extends Component {
 render(){
+	// const baseUrl = process.env.REACT_APP_BASEURL
+	// to help GameComment function properly
 	return(
 			<Container>
 			<br/><br/>
@@ -26,7 +29,8 @@ render(){
         			</Item.Description>
         			</Segment>
         			<br/>
-        			<Header as='h3'>Comments:</Header>
+{/*      				<GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments}/>
+*/}        			<Header as='h3'>Comments:</Header>
         			<Divider />
         			<Segment compact raised color='orange'>
         			<Comment>

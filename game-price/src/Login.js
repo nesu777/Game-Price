@@ -7,7 +7,9 @@ class Login extends Component{
   <div >
     <br/>
     <Container text>
+    <br/><br/>
     <Segment>
+    <br/><br/>
     <Header as='h1'>Login</Header>
       <Form>
       <Form.Field>
@@ -23,7 +25,9 @@ class Login extends Component{
       </Form.Field>
         <Button color='orange' type='submit'>Submit</Button>
       </Form>
+    <br/><br/><br/><br/>
     </Segment>
+    <br/><br/>
     </Container>
   </div>
 )
