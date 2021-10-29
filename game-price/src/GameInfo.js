@@ -15,7 +15,7 @@ render(){
       			<Segment raised>
         			{/*<Item.Header as='h1'>{this.state.showThisGame['info']['title']}</Item.Header>*/}
         			<Item.Header as='h1'>{game.external}</Item.Header>
-        			<Item.Image size='huge' src={game.thumb} />
+        			<Item.Image src={game.thumb} size='huge' />
         			<Item.Header as='h2' color='blue'>${game.cheapest} <Icon name='gamepad' color='blue'/>
         			<br/><br/>
         			<button className='ui primary button'>Add to Cart</button>

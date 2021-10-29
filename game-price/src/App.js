@@ -94,6 +94,8 @@ class App extends Component {
         showThisGame: data,
       }, () => {
         console.log(this.state.showThisGame)
+        /*made it return to try and pass it to GameInfo*/
+        return this.state.showThisGame
       })
     }
 
