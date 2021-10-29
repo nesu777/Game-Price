@@ -7,12 +7,13 @@ import { BrowserRouter as Router, Route } from "react-router-dom"
 import GameInfo from './GameInfo'
 import Featured from './Featured'
 import GameList from './GameList'
+import Comment from './Comment'
 import { Input, Icon } from 'semantic-ui-react'
 
 //internal calls
 import SearchPage from './SearchPage'
 
-//let baseUrl = process.env.REACT_APP_BASEURL
+let baseUrl = process.env.REACT_APP_BASEURL
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class App extends Component {
       searchURL: '',
       gamesOnSale: [],
       requestOptions: {},
+      comments: []
     }
 
       // this.handleChange = this.handleChange.bind(this)
@@ -97,9 +99,33 @@ class App extends Component {
       })
     }
 
+    getComments = () => {
+      // fetch to the backend
+      fetch(baseUrl + "/comments")
+      .then(res => {
+        if(res.status === 200) {
+          return res.json()
+        } else {
+          return []
+        }
+      }).then(data => {
+        console.log(data)
+        this.setState({ comments: data })
+      })
+    }
+
+    addComment = (newComment) => {
+      const copycomments = [...this.state.comments]
+      copycomments.push(newComment)
+      this.setState({
+        comments: copycomments,
+      })
+    }
+
 
   componentDidMount(){
     this.getGames()
+    this.getComments()
   }
 
   render() {
@@ -171,6 +197,7 @@ class App extends Component {
       </Router>
       <Footer />
         </div>
+        <Comment baseUrl={baseUrl} addComment={this.addComment} comments={this.state.comments}/>
       </>
     );
   }
