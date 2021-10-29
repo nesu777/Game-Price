@@ -9,6 +9,8 @@ import Featured from './Featured'
 import GameList from './GameList'
 import { Input, Icon } from 'semantic-ui-react'
 
+import TestShow from './testShow'
+
 //internal calls
 import SearchPage from './SearchPage'
 
@@ -26,7 +28,6 @@ class App extends Component {
       searchURL: '',
       gamesOnSale: [],
       requestOptions: {},
-      showThisGame: ''
     }
 
       // this.handleChange = this.handleChange.bind(this)
@@ -94,7 +95,6 @@ class App extends Component {
       }, () => {
         console.log(this.state.showThisGame)
       })
-
     }
 
 
@@ -131,6 +131,10 @@ class App extends Component {
           </div>
         </form>
         </div>
+
+        {
+          (this.state.showThisGame) ? <TestShow showgame={this.state.showThisGame} /> : ''
+        }
 
         {
           (this.state.searchResults) ? <SearchPage sendData={this.getData} searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
