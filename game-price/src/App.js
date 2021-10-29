@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom"
 import GameInfo from './GameInfo'
 import Featured from './Featured'
 import GameList from './GameList'
+import AboutUs from './AboutUs'
 import Comment from './Comment'
 import { Input, Icon } from 'semantic-ui-react'
 
@@ -172,7 +173,7 @@ class App extends Component {
         </div>
 
         {
-          (this.state.showThisGame) ? <GameInfo showgame={this.state.showThisGame}/> : ''
+          (this.state.showThisGame) ? <GameInfo showgame={this.state.showThisGame} /> : ''
         }
 
         {
@@ -186,12 +187,12 @@ class App extends Component {
           <HomePage />}
         />
 
-        {/*<Route
+        <Route
           path="/aboutus"
           exact
           render={() =>
-          <GameInfo showThisGame={this.showThisGame} />}
-        />*/}
+          <AboutUs />}
+        />
 
         <Route
           path="/allgames"
@@ -208,9 +209,9 @@ class App extends Component {
         />
 
       </Router>
+      <Comment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments}/>
       <Footer />
         </div>
-        <Comment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments}/>
       </>
     );
   }
