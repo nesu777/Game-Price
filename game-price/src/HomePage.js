@@ -13,7 +13,7 @@ class HomePage extends Component{
           Connect with other players by creating an account and joing in 
           on game comment posts and ratings.
         </Header>
-        <Image src='./PCGamingCanva.png' />
+        <Image src='./PCGamingCanva.jpg' />
 
     </Container>
   </div>

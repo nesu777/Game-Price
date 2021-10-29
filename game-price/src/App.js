@@ -8,6 +8,8 @@ import GameInfo from './GameInfo'
 import Featured from './Featured'
 import GameList from './GameList'
 import AboutUs from './AboutUs'
+import Support from './Support'
+import Login from './Login'
 import GameComment from './Comment'
 import { Input, Icon } from 'semantic-ui-react'
 
@@ -188,13 +190,6 @@ class App extends Component {
         />
 
         <Route
-          path="/aboutus"
-          exact
-          render={() =>
-          <AboutUs />}
-        />
-
-        <Route
           path="/allgames"
           exact
           render={() =>
@@ -206,6 +201,27 @@ class App extends Component {
           exact
           render={() =>
           <Featured />}
+        />
+
+         <Route
+          path="/aboutus"
+          exact
+          render={() =>
+          <AboutUs />}
+        />
+
+        <Route
+          path="/support"
+          exact
+          render={() =>
+          <Support />}
+        />
+
+        <Route
+          path="/login"
+          exact
+          render={() =>
+          <Login />}
         />
 
       </Router>
