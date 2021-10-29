@@ -6,17 +6,14 @@ import { Item, Comment, Segment, Divider, Icon, Header, Container } from 'semant
 class GameInfo extends Component {
 render(){
 	return(
-		this.props.searchResults.map(game => {
-		return(
 			<Container>
 			<br/><br/>
 			<Item /*key={game.id}*/>
       			<Item.Content>
       			<Segment raised>
-        			{/*<Item.Header as='h1'>{this.state.showThisGame['info']['title']}</Item.Header>*/}
-        			<Item.Header as='h1'>{game.external}</Item.Header>
-        			<Item.Image src={game.thumb} size='huge' />
-        			<Item.Header as='h2' color='blue'>${game.cheapest} <Icon name='gamepad' color='blue'/>
+        			<Item.Header as='h1'>{this.props.showgame.info.title}</Item.Header>
+        			<Item.Image src={this.props.showgame.info.thumb} size='huge' />
+        			<Item.Header as='h2' color='blue'>${this.props.showgame.deals['0'].price} <Icon name='gamepad' color='blue'/>
         			<br/><br/>
         			<button className='ui primary button'>Add to Cart</button>
         			<button className='ui secondary button'>Wish List<Icon name='star' color='orange' /></button>
@@ -25,7 +22,7 @@ render(){
         			<Divider />
         			<Item.Meta as='h3'><strong>Game Description</strong></Item.Meta>
         			<Item.Description>
-          				{game.description}
+          				{this.props.showgame.info.description}
         			</Item.Description>
         			</Segment>
         			<br/>
@@ -47,8 +44,6 @@ render(){
     		</Item>
     		</Container>
 			)
-		})
-		)
 	}
 }
 

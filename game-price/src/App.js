@@ -9,8 +9,6 @@ import Featured from './Featured'
 import GameList from './GameList'
 import { Input, Icon } from 'semantic-ui-react'
 
-import TestShow from './testShow'
-
 //internal calls
 import SearchPage from './SearchPage'
 
@@ -135,15 +133,11 @@ class App extends Component {
         </div>
 
         {
-          (this.state.showThisGame) ? <TestShow showgame={this.state.showThisGame} /> : ''
+          (this.state.showThisGame) ? <GameInfo showgame={this.state.showThisGame}/> : ''
         }
 
         {
           (this.state.searchResults) ? <SearchPage sendData={this.getData} searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
-        }
-
-        {
-          (this.state.searchResults && this.state.showThisGame !== '') ? <GameInfo showThisGame={this.state.showThisGame} searchResults={this.state.searchResults}/> : ''
         }
 
         <Route
