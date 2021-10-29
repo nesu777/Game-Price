@@ -8,7 +8,7 @@ import GameInfo from './GameInfo'
 import Featured from './Featured'
 import GameList from './GameList'
 import AboutUs from './AboutUs'
-import Comment from './Comment'
+import GameComment from './Comment'
 import { Input, Icon } from 'semantic-ui-react'
 
 //internal calls
@@ -209,7 +209,7 @@ class App extends Component {
         />
 
       </Router>
-      <Comment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments}/>
+      <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments}/>
       <Footer />
         </div>
       </>
