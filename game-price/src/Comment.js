@@ -30,7 +30,6 @@ export default class Comment extends Component{
                 return res.json()
             }).then(data =>{
                 this.props.addComment(data)
-                console.log(data)
                 this.setState({
                     name:'',
                     comment:''
@@ -39,14 +38,18 @@ export default class Comment extends Component{
     }
 
     render(){
-        
+        const allComments = this.props.comments
+        const Comments = allComments.map(element => <li key={element._id} id={element._id}>{element.name} - {element.comment}</li>)
         return(
+            <>
             <form onSubmit={this.handleSubmit}>
                 <label htmlFor="name">Name: </label>
                 <input type="text" id="name" name="name" onChange={ (e) => this.handleChange(e)} value={this.state.name}/>
                 <input type="text" id="comment" name="comment" onChange={ (e) => this.handleChange(e)} value={this.state.comment}/>
                 <input type="submit"/>
             </form>
+            <ul>{Comments}</ul>
+            </>
         )
     }
 }
