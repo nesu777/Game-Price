@@ -122,6 +122,19 @@ class App extends Component {
       })
     }
 
+    deleteComment = (id) => {
+      fetch(baseUrl + '/comments/' + id, {
+      method: 'DELETE',
+    }).then( res => {
+      const findIndex = this.state.comments.findIndex(comment => comment._id === id)
+      const copyComments = [...this.state.comments]
+      copyComments.splice(findIndex, 1)
+      this.setState({
+        comments: copyComments
+      })
+    })
+  }
+
 
   componentDidMount(){
     this.getGames()
@@ -197,7 +210,7 @@ class App extends Component {
       </Router>
       <Footer />
         </div>
-        <Comment baseUrl={baseUrl} addComment={this.addComment} comments={this.state.comments}/>
+        <Comment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments}/>
       </>
     );
   }

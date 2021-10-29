@@ -39,7 +39,7 @@ export default class Comment extends Component{
 
     render(){
         const allComments = this.props.comments
-        const Comments = allComments.map(element => <li key={element._id} id={element._id}>{element.name} - {element.comment}</li>)
+        const Comments = allComments.map(element => <div><li key={element._id} id={element._id}>{element.name} - {element.comment}</li><button onClick={() =>{this.props.deleteComment(element._id)}}>Delete</button></div>)
         return(
             <>
             <form onSubmit={this.handleSubmit}>
