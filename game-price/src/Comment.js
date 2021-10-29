@@ -41,33 +41,40 @@ export default class GameComment extends Component{
 
     render(){
         const allComments = this.props.comments
-        const Comments = allComments.map(element => <div><li key={element._id} id={element._id}>{element.name} - {element.comment}</li><button onClick={() =>{this.props.deleteComment(element._id)}}>Delete</button></div>)
+        const Comments = allComments.map(element => <div><br/>
+            <Segment raised color='orange'>
+            <Comment>
+                    <Comment.Content key={element._id} id={element._id}>
+                    <Comment.Author><Icon size='big' name='user circle' />{element.name}</Comment.Author>
+                        <Container text>
+                        <Comment.Text> 
+                        {element.comment}
+                        </Comment.Text>
+                        </Container>
+                    </Comment.Content>
+                    </Comment>
+                    <br/>
+                    <Button color='red' onClick={() =>{this.props.deleteComment(element._id)}}>Delete</Button>
+            </Segment></div>)
         return(
             <>
             <br/><br/>
             <Container>
-            <Segment contain color='blue' inverted align='center'>
+            <Segment color='blue'inverted raised >
             <Header as='h1'>Commments</Header>
             <Form onSubmit={this.handleSubmit}>
+            <Container text>
+            <Segment raised>
             <Form.Field>
                 <label htmlFor="name">User: </label>
                 <Form.Input  type="text" id="name" name="name" onChange={ (e) => this.handleChange(e)} value={this.state.name}/>
                 <Form.Input  placeholder="Add Comment..." type="text" id="comment" name="comment" onChange={ (e) => this.handleChange(e)} value={this.state.comment}/>
-                <Button color='orange' content='Submit' type="submit"></Button>
-            </Form.Field>    
-            </Form>
-            <Segment compact raised color='orange'>
-            <Comment>
-                    <Icon size='big' name='user circle' />
-                    <Comment.Content>
-                    <Comment.Author>{Comments.name}</Comment.Author>
-                        <Comment.Text> 
-                        {Comments.comment}
-                        </Comment.Text>
-                    </Comment.Content>
-                    </Comment>
-            <ul>{Comments}</ul>
+                <Button color='green' content='Submit' type="submit"></Button>
+            </Form.Field> 
             </Segment>
+            </Container>   
+            </Form>
+            <ul>{Comments}</ul>
             </Segment>
             </Container>
             </>
