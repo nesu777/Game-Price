@@ -183,7 +183,7 @@ class App extends Component {
         }
 
         <Route
-          path="/home"
+          path="/"
           exact
           render={() =>
           <HomePage />}

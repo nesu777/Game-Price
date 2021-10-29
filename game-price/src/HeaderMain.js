@@ -20,7 +20,7 @@ class HeaderMain extends Component{
     <Header.Content>G2B</Header.Content>
   <Menu color='orange' inverted fluid widths={6}>
     <Menu.Item
-      as={NavLink} to="/home"
+      as={NavLink} to="/"
       name='Home'
       active={activeItem === 'home'}
       onClick={this.handleItemClick}
