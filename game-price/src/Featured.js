@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Item, Comment, Container, Header, Divider, Segment, Icon } from 'semantic-ui-react'
+import { Item, Container, Divider, Segment, Icon } from 'semantic-ui-react'
 
 //Show Page Component
 
@@ -31,31 +31,7 @@ render(){
         			</Item.Description>
         			</Segment>
         			<br/>
-        			<Header as='h3'>Comments:</Header>
-        			<Divider />
-        			<Segment compact raised color='orange'>
-        			<Comment>
-        			<Icon size='big' name='user circle' />
-                    <Comment.Content>
-                    <Comment.Author>User123</Comment.Author>
-                      <Comment.Text> 
-                      	It is so much better than the last year, also compared to eFootball.
-												But, still there are lot to improve here.
-											</Comment.Text>
-                    </Comment.Content>
-                  	</Comment>
-              </Segment>
-              <Segment compact raised color='orange'>
-        			<Comment>
-        			<Icon size='big' name='user circle' />
-                    <Comment.Content>
-                    <Comment.Author>PCGuy</Comment.Author>
-                      <Comment.Text> 
-                      	I swear they deliberately make career mode trash so you play FUT. There are far too many times the ball goes where you do not want it to. I gave it more than 50 hours and I am done. 3/10
-											</Comment.Text>
-                    </Comment.Content>
-                  	</Comment>
-              </Segment>
+        			{/**/}
       			</Item.Content>
     		</Item>
     		</Container>

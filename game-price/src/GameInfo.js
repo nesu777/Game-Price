@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import GameComment from './Comment'
-import { Item, Comment, Segment, Divider, Icon, Header, Container } from 'semantic-ui-react'
+import { Item, Segment, Divider, Icon, Container } from 'semantic-ui-react'
 
 //Show Page Component
 
@@ -30,20 +30,7 @@ render(){
         			</Segment>
         			<br/>
 {/*      				<GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments}/>
-*/}        			<Header as='h3'>Comments:</Header>
-        			<Divider />
-        			<Segment compact raised color='orange'>
-        			<Comment>
-        			<Icon size='big' name='user circle' />
-                    <Comment.Content>
-                    <Comment.Author>User123</Comment.Author>
-                      	<Comment.Text> 
-                      	It is so much better than the last year, also compared to eFootball.
-						But, still there are lot to improve here.
-						</Comment.Text>
-                    </Comment.Content>
-                  	</Comment>
-                  	</Segment>
+*/}
       			</Item.Content>
     		</Item>
     		</Container>
