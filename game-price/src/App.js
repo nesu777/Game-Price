@@ -137,6 +137,24 @@ class App extends Component {
     })
   }
 
+  addLike = (comment) =>{
+    fetch(baseUrl + '/comments' + comment._id,{
+      method:'PUT',
+      body: JSON.stringify({likes: comment.likes + 1}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+    .then(resJson =>{
+      const copyComments = [...this.state.comments]
+      const findIndex = this.state.comments.findIndex(comment => comment._id === resJson._id)
+      copyComments[findIndex].likes = resJson.likes
+      this.setState({
+        comments: copyComments
+      })
+    })
+  }
+
  
  
 
