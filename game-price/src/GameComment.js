@@ -59,7 +59,7 @@ export default class GameComment extends Component{
                     </Comment.Content>
                     </Comment>
                     <br/>
-                    <Button color='red' onClick={() =>{this.props.addLike(element)}}>{element.likes} Like(s)</Button>
+                    <Button color='white' onClick={() =>{this.props.addLike(element)}}><Icon name='heart' color='red'/>{element.likes} Like(s)</Button>
                     <Button color='red' onClick={() =>{this.props.deleteComment(element._id)}}>Delete</Button>
             </Segment></div>)
         return(
