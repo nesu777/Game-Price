@@ -31,7 +31,6 @@ class App extends Component {
       gamesOnSale: [],
       requestOptions: {},
       comments: [],
-      commentToBeEdited : {}
     }
 
       // this.handleChange = this.handleChange.bind(this)
@@ -138,41 +137,8 @@ class App extends Component {
     })
   }
 
-  editComment = (element) => {
-    console.log(element)
-    fetch(baseUrl + '/comments/' + element._id,{
-    method: 'PUT',
-    body: JSON.stringify({
-      name: element.name,
-      comment: element.comment
-    }),
-    headers: {
-      'Content-Type' : 'application/json'
-    }
-  }).then(res =>{
-    const updatedComment = res.json()
-    const findIndex = this.state.comments.findIndex(comment => comment._id === updatedComment._id)
-    const copyComments = [...this.state.comments]
-    copyComments[findIndex] = updatedComment
-    this.setState({
-      comments: copyComments,
-    })
-  })
-  }
-
-  createEditForm = () =>{
-
-  }
-  
-
-
-  // showEditForm = (comment) =>{
-  //   this.setState({
-  //     name: comment.name,
-  //     comment: comment.comment,
-  //     commentToBeEdited: comment
-  //   })
-  // }
+ 
+ 
 
   componentDidMount(){
     this.getGames()
@@ -214,7 +180,7 @@ class App extends Component {
         }
 
         {
-        (this.state.showThisGame) ? <GameComment showThisGame={this.state.showThisGame} baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} /> : ''
+        (this.state.showThisGame) ? <GameComment baseUrl={baseUrl} showThisGame={this.state.showThisGame} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} id={this.state.elementID}/> : ''
         }
 
         {
@@ -265,7 +231,7 @@ class App extends Component {
 
       </Router>
 
-      <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} editComment={this.editComment}/>
+      <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} />
       <Footer />
         </div>
       </>

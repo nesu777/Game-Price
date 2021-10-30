@@ -8,7 +8,8 @@ export default class GameComment extends Component{
 
         this.state={
             name: '',
-            comment:''
+            comment:'',
+            gameName: '',
         }
     }
 
@@ -35,10 +36,11 @@ export default class GameComment extends Component{
                 this.setState({
                     name:'',
                     comment:'',
-                    gameName: this.props.showThisGame.info.title
+                    gameName: this.props.showThisGame
                 })
             })
     }
+
 
     
 
@@ -57,7 +59,7 @@ export default class GameComment extends Component{
                     </Comment.Content>
                     </Comment>
                     <br/>
-                    <Button color='red' onClick={() =>{this.props.editComment(element)}}>Edit</Button>
+                    <Button color='red' onClick={() =>{}}></Button>
                     <Button color='red' onClick={() =>{this.props.deleteComment(element._id)}}>Delete</Button>
             </Segment></div>)
         return(
