@@ -179,7 +179,7 @@ class App extends Component {
         }
 
         {
-        (this.state.showThisGame) ? <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} /> : ''
+        (this.state.showThisGame) ? <GameComment showThisGame={this.state.showThisGame} baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} /> : ''
         }
 
         {

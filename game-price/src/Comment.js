@@ -34,7 +34,8 @@ export default class GameComment extends Component{
                 this.props.addComment(data)
                 this.setState({
                     name:'',
-                    comment:''
+                    comment:'',
+                    gameName: this.props.showThisGame.info.title
                 })
             })
     }
@@ -47,7 +48,7 @@ export default class GameComment extends Component{
                     <Comment.Content key={element._id} id={element._id}>
                     <Comment.Author><Icon size='big' name='user circle' />{element.name}</Comment.Author>
                         <Container text>
-                        <Comment.Text> 
+                        <Comment.Text>
                         {element.comment}
                         </Comment.Text>
                         </Container>
@@ -70,9 +71,9 @@ export default class GameComment extends Component{
                 <Form.Input  type="text" id="name" name="name" onChange={ (e) => this.handleChange(e)} value={this.state.name}/>
                 <Form.Input  placeholder="Add Comment..." type="text" id="comment" name="comment" onChange={ (e) => this.handleChange(e)} value={this.state.comment}/>
                 <Button color='green' content='Submit' type="submit"></Button>
-            </Form.Field> 
+            </Form.Field>
             </Segment>
-            </Container>   
+            </Container>
             </Form>
             <ul>{Comments}</ul>
             </Segment>
