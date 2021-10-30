@@ -138,7 +138,8 @@ class App extends Component {
   }
 
   addLike = (comment) =>{
-    fetch(baseUrl + '/comments' + comment._id,{
+    // console.log(comment)
+    fetch(baseUrl + '/comments/' + comment._id,{
       method:'PUT',
       body: JSON.stringify({likes: comment.likes + 1}),
       headers: {
@@ -146,6 +147,7 @@ class App extends Component {
       }
     }).then(res => res.json())
     .then(resJson =>{
+      // console.log(resJson)
       const copyComments = [...this.state.comments]
       const findIndex = this.state.comments.findIndex(comment => comment._id === resJson._id)
       copyComments[findIndex].likes = resJson.likes
@@ -198,7 +200,7 @@ class App extends Component {
         }
 
         {
-        (this.state.showThisGame) ? <GameComment baseUrl={baseUrl} showThisGame={this.state.showThisGame} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} id={this.state.elementID}/> : ''
+        (this.state.showThisGame) ? <GameComment baseUrl={baseUrl} showThisGame={this.state.showThisGame} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments}  addLike={this.addLike}/> : ''
         }
 
         {
@@ -249,7 +251,7 @@ class App extends Component {
 
       </Router>
 
-      <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} />
+      <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} addLike={this.addLike}/>
       <Footer />
         </div>
       </>
