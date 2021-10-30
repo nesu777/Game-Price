@@ -10,7 +10,7 @@ import GameList from './GameList'
 import AboutUs from './AboutUs'
 import Support from './Support'
 import Login from './Login'
-import GameComment from './Comment'
+import GameComment from './GameComment'
 import { Input, Icon } from 'semantic-ui-react'
 
 //internal calls
@@ -30,7 +30,8 @@ class App extends Component {
       searchURL: '',
       gamesOnSale: [],
       requestOptions: {},
-      comments: []
+      comments: [],
+      commentToBeEdited : {}
     }
 
       // this.handleChange = this.handleChange.bind(this)
@@ -112,7 +113,6 @@ class App extends Component {
           return []
         }
       }).then(data => {
-        console.log(data)
         this.setState({ comments: data })
       })
     }
@@ -138,6 +138,41 @@ class App extends Component {
     })
   }
 
+  editComment = (element) => {
+    console.log(element)
+    fetch(baseUrl + '/comments/' + element._id,{
+    method: 'PUT',
+    body: JSON.stringify({
+      name: element.name,
+      comment: element.comment
+    }),
+    headers: {
+      'Content-Type' : 'application/json'
+    }
+  }).then(res =>{
+    const updatedComment = res.json()
+    const findIndex = this.state.comments.findIndex(comment => comment._id === updatedComment._id)
+    const copyComments = [...this.state.comments]
+    copyComments[findIndex] = updatedComment
+    this.setState({
+      comments: copyComments,
+    })
+  })
+  }
+
+  createEditForm = () =>{
+
+  }
+  
+
+
+  // showEditForm = (comment) =>{
+  //   this.setState({
+  //     name: comment.name,
+  //     comment: comment.comment,
+  //     commentToBeEdited: comment
+  //   })
+  // }
 
   componentDidMount(){
     this.getGames()
@@ -230,6 +265,7 @@ class App extends Component {
 
       </Router>
 
+      <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} editComment={this.editComment}/>
       <Footer />
         </div>
       </>

@@ -40,6 +40,8 @@ export default class GameComment extends Component{
             })
     }
 
+    
+
     render(){
         const allComments = this.props.comments
         const Comments = allComments.map(element => <div><br/>
@@ -55,6 +57,7 @@ export default class GameComment extends Component{
                     </Comment.Content>
                     </Comment>
                     <br/>
+                    <Button color='red' onClick={() =>{this.props.editComment(element)}}>Edit</Button>
                     <Button color='red' onClick={() =>{this.props.deleteComment(element._id)}}>Delete</Button>
             </Segment></div>)
         return(
