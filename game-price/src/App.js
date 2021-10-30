@@ -225,7 +225,9 @@ class App extends Component {
         />
 
       </Router>
-      <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments}/>
+      {
+      (this.state.showThisGame) ? <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} /> : ''
+      }
       <Footer />
         </div>
       </>
