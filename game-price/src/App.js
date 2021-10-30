@@ -179,6 +179,10 @@ class App extends Component {
         }
 
         {
+        (this.state.showThisGame) ? <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} /> : ''
+        }
+
+        {
           (this.state.searchResults) ? <SearchPage sendData={this.getData} searchResults={this.state.searchResults} showSearchedGame={this.showSearchedGame}/> : ''
         }
 
@@ -225,9 +229,7 @@ class App extends Component {
         />
 
       </Router>
-      {
-      (this.state.showThisGame) ? <GameComment baseUrl={baseUrl} addComment={this.addComment} deleteComment={this.deleteComment} comments={this.state.comments} /> : ''
-      }
+
       <Footer />
         </div>
       </>
