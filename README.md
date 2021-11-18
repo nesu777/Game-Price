@@ -2,6 +2,7 @@
 PC games on sale
 ## Project Choice (Tell us which project you're doing!)
 > G2B
+> https://game-price-front.herokuapp.com/
 
 ## Project Description
 > Include: Express, Mongoose, MongoDB, Node.js<br />
